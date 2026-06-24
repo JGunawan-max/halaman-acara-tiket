@@ -1,8 +1,11 @@
 {
   "version": 2,
+  "buildCommand": "",
+  "outputDirectory": ".",
   "functions": {
     "api/daftar.js": {
-      "includeFiles": "email.js"
+      "memory": 128,
+      "maxDuration": 10
     }
   }
 }
