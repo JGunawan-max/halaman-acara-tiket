@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<!--
+  index.html  —  Halaman utama Workshop Claude Code 2026
+  Struktur halaman (dari atas ke bawah):
+    1. NAV         – navigasi tetap di atas, transparan saat di hero
+    2. HERO        – layar penuh dengan judul, statistik, dan CTA
+    3. INFO STRIP  – ringkasan tanggal / jam / lokasi
+    4. TENTANG     – 4 kartu keunggulan acara
+    5. AGENDA      – timeline jadwal hari H
+    6. PENDAFTARAN – info harga (kiri) + form beli tiket (kanan)
+    7. FOOTER      – kontak
+    8. MODAL       – popup konfirmasi setelah form berhasil disubmit
+-->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workshop Claude Code 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ① NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-dot"></span>
+        Claude Code
+      </div>
+      <a href="#daftar" class="nav-cta">Daftar Sekarang →</a>
+    </div>
+  </nav>
+
+  <!-- ② HERO -->
+  <section class="hero">
+    <!-- Latar belakang dekoratif: orb cahaya + grid tipis -->
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-pill">
+        <span class="pill-dot"></span>
+        19 Juli 2026 · Jakarta Selatan
+      </div>
+
+      <h1 class="hero-title">
+        Workshop<br />
+        <span class="grad-text">Claude Code</span>
+      </h1>
+
+      <p class="hero-sub">
+        Satu hari penuh bersama para expert. Belajar membangun produk nyata<br class="br-desk" />
+        dengan kecerdasan buatan — dari nol hingga siap deploy.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#daftar" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+          </svg>
+          Amankan Kursimu
+        </a>
+        <a href="#tentang" class="btn-ghost">Lihat Detail ↓</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>50</strong>
+          <span>Kursi Tersedia</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>8 Jam</strong>
+          <span>Sesi Intensif</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>3</strong>
+          <span>Instruktur Expert</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ③ INFO STRIP -->
+  <div class="info-strip">
+    <div class="strip-inner">
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+        <span><strong>Sabtu, 19 Juli 2026</strong></span>
+      </div>
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        <span><strong>09.00 – 17.00 WIB</strong></span>
+      </div>
+      <div class="strip-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="10" r="3"/>
+          <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/>
+        </svg>
+        <span><strong>Gedung Inovasi Lt. 3, Jakarta Selatan</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ TENTANG -->
+  <section class="tentang" id="tentang">
+    <div class="container">
+      <div class="section-label">Tentang Acara</div>
+      <h2 class="section-title">Lebih dari sekadar<br /><span class="grad-text">workshop biasa</span></h2>
+      <p class="section-sub">
+        Dirancang khusus untuk developer, designer, dan product builder yang ingin
+        memanfaatkan AI secara praktis — bukan sekadar hype.
+      </p>
+
+      <div class="cards-grid">
+        <div class="card card-purple">
+          <div class="card-icon">⚡</div>
+          <h3>Hands-on 100%</h3>
+          <p>Setiap sesi langsung praktek. Bawa laptop, pulang dengan proyek nyata yang sudah berjalan.</p>
+        </div>
+        <div class="card card-pink">
+          <div class="card-icon">🎯</div>
+          <h3>Kurikulum Terstruktur</h3>
+          <p>Dari dasar prompt engineering hingga membangun agentic workflow yang kompleks dan efisien.</p>
+        </div>
+        <div class="card card-cyan">
+          <div class="card-icon">🤝</div>
+          <h3>Komunitas Aktif</h3>
+          <p>Akses ke grup eksklusif alumni, sharing project, dan sesi Q&A bulanan bersama instruktur.</p>
+        </div>
+        <div class="card card-orange">
+          <div class="card-icon">🎓</div>
+          <h3>Sertifikat Resmi</h3>
+          <p>Sertifikat digital bertanda tangan instruktur yang bisa langsung dipajang di LinkedIn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑤ LOKASI -->
+  <section class="lokasi">
+    <div class="container">
+      <div class="section-label">Lokasi Acara</div>
+      <h2 class="section-title">Temukan Kami di <span class="grad-text">Grand Indonesia</span></h2>
+      <p class="section-sub">
+        Gedung Inovasi Lt. 3 berada di dalam kompleks Grand Indonesia Mall —
+        mudah dijangkau dari berbagai penjuru Jakarta.
+      </p>
+
+      <div class="lokasi-wrap">
+        <!-- Info lokasi -->
+        <div class="lokasi-info">
+          <div class="lokasi-card">
+            <div class="lokasi-icon">📍</div>
+            <div>
+              <strong>Alamat</strong>
+              <span>Jl. M.H. Thamrin No.1, Menteng,<br />Jakarta Pusat 10310</span>
+            </div>
+          </div>
+          <div class="lokasi-card">
+            <div class="lokasi-icon">🏢</div>
+            <div>
+              <strong>Ruangan</strong>
+              <span>Gedung Inovasi, Lantai 3<br />Grand Indonesia West Mall</span>
+            </div>
+          </div>
+          <div class="lokasi-card">
+            <div class="lokasi-icon">🚇</div>
+            <div>
+              <strong>Transportasi</strong>
+              <span>MRT Bundaran HI (5 menit jalan kaki)<br />Transjakarta Halte Bank Indonesia</span>
+            </div>
+          </div>
+          <div class="lokasi-card">
+            <div class="lokasi-icon">🅿️</div>
+            <div>
+              <strong>Parkir</strong>
+              <span>Parkir tersedia di dalam gedung<br />Grand Indonesia (berbayar)</span>
+            </div>
+          </div>
+          <a
+            class="btn-maps"
+            href="https://www.openstreetmap.org/?mlat=-6.1944&mlon=106.8229#map=17/-6.1944/106.8229"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="12" cy="10" r="3"/>
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 14 8 14s8-8.75 8-14a8 8 0 0 0-8-8z"/>
+            </svg>
+            Buka di OpenStreetMap
+          </a>
+        </div>
+
+        <!-- Peta embed OpenStreetMap — Grand Indonesia, Jakarta -->
+        <div class="map-wrap">
+          <iframe
+            title="Peta lokasi Grand Indonesia Jakarta"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=106.8179%2C-6.1984%2C106.8279%2C-6.1904&layer=mapnik&marker=-6.1944%2C106.8229"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ AGENDA -->
+  <section class="agenda">
+    <div class="container">
+      <div class="section-label">Jadwal Hari H</div>
+      <h2 class="section-title">Agenda <span class="grad-text">Workshop</span></h2>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-time">09.00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h4>Registrasi &amp; Breakfast</h4>
+            <p>Check-in peserta, makan pagi ringan, dan sesi networking awal.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">09.30</div>
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-body">
+            <h4>Opening &amp; Claude Code 101</h4>
+            <p>Pengenalan ekosistem Claude Code, setup environment, dan prompt dasar.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">11.00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h4>Workshop Sesi 1 — Build an App</h4>
+            <p>Membangun aplikasi web dari scratch menggunakan Claude Code sebagai co-pilot.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">13.00</div>
+          <div class="tl-dot tl-dot-break"></div>
+          <div class="tl-body">
+            <h4>Makan Siang &amp; Istirahat</h4>
+            <p>Rehat, makan siang bersama, dan sesi informal dengan instruktur.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">14.00</div>
+          <div class="tl-dot tl-dot-active"></div>
+          <div class="tl-body">
+            <h4>Workshop Sesi 2 — Agentic Workflow</h4>
+            <p>Membangun multi-agent pipeline dan mengintegrasikan Claude dengan tools eksternal.</p>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">16.00</div>
+          <div class="tl-dot"></div>
+          <div class="tl-body">
+            <h4>Demo &amp; Closing</h4>
+            <p>Presentasi mini project peserta, sertifikat, foto bersama, dan networking penutup.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑥ PENDAFTARAN -->
+  <section class="register" id="daftar">
+    <div class="container">
+      <div class="register-grid">
+
+        <!-- Kolom kiri: info harga & fasilitas -->
+        <div class="reg-info">
+          <div class="section-label">Pendaftaran</div>
+          <h2 class="section-title">Siap ikut?<br /><span class="grad-text">Daftar sekarang.</span></h2>
+          <p class="section-sub">Tempat sangat terbatas. Sudah <strong>38 dari 50 kursi</strong> terisi.</p>
+
+          <div class="seat-bar-wrap">
+            <div class="seat-bar">
+              <div class="seat-fill" style="width: 76%"></div>
+            </div>
+            <span class="seat-label">76% terisi</span>
+          </div>
+
+          <ul class="include-list">
+            <li>
+              <span class="inc-icon">✓</span>
+              <div>
+                <strong>Modul &amp; materi eksklusif</strong>
+                <small>PDF + video rekaman pasca-acara</small>
+              </div>
+            </li>
+            <li>
+              <span class="inc-icon">✓</span>
+              <div>
+                <strong>Konsumsi lengkap</strong>
+                <small>Sarapan, makan siang &amp; coffee break</small>
+              </div>
+            </li>
+            <li>
+              <span class="inc-icon">✓</span>
+              <div>
+                <strong>Sertifikat digital</strong>
+                <small>Dikirim H+1 via email</small>
+              </div>
+            </li>
+            <li>
+              <span class="inc-icon">✓</span>
+              <div>
+                <strong>Akses komunitas alumni</strong>
+                <small>Group eksklusif + mentoring online</small>
+              </div>
+            </li>
+          </ul>
+
+          <div class="price-box">
+            <div class="price-main">
+              <span class="currency">Rp</span>
+              <span class="amount">50.000</span>
+              <span class="unit">/ tiket</span>
+            </div>
+            <div class="price-note">Harga spesial · Terbatas untuk 50 peserta</div>
+          </div>
+        </div>
+
+        <!-- Kolom kanan: form pendaftaran -->
+        <!-- novalidate → validasi ditangani JS, bukan browser bawaan -->
+        <div class="reg-form-wrap">
+          <form id="registrationForm" novalidate>
+            <h3 class="form-title">Isi Data Pendaftaran</h3>
+
+            <div class="field">
+              <label for="nama">Nama Lengkap</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="4"/>
+                  <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+                </svg>
+                <input type="text" id="nama" placeholder="Nama kamu" required autocomplete="name" />
+              </div>
+              <span class="field-err" id="err-nama"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">Alamat Email</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m2 7 10 7 10-7"/>
+                </svg>
+                <input type="email" id="email" placeholder="email@kamu.com" required autocomplete="email" />
+              </div>
+              <span class="field-err" id="err-email"></span>
+            </div>
+
+            <div class="field">
+              <label for="tiket">Jumlah Tiket <small>(maks. 5)</small></label>
+              <div class="qty-wrap">
+                <button type="button" id="btnMinus" class="qty-btn">−</button>
+                <input type="number" id="tiket" value="1" min="1" max="5" readonly />
+                <button type="button" id="btnPlus" class="qty-btn">+</button>
+              </div>
+            </div>
+
+            <!-- Total diperbarui otomatis oleh script.js setiap qty berubah -->
+            <div class="total-card">
+              <div class="total-left">
+                <span class="total-label">Total Pembayaran</span>
+                <span class="total-qty" id="totalQtyLabel">1 tiket × Rp 50.000</span>
+              </div>
+              <span class="total-amount" id="totalHarga">Rp 50.000</span>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btnSubmit">
+              <span class="btn-text">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <path d="M20 12V22H4V12"/>
+                  <path d="M22 7H2v5h20V7z"/>
+                  <path d="M12 22V7"/>
+                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                </svg>
+                Beli Tiket Sekarang
+              </span>
+            </button>
+
+            <p class="form-note">🔒 Data kamu aman. Tidak akan dibagikan ke pihak ketiga.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑧ FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-dot"></span>
+        Workshop Claude Code
+      </div>
+      <p>Pertanyaan? Hubungi kami di <a href="mailto:info@workshopclaudecode.id">info@workshopclaudecode.id</a></p>
+      <p class="footer-copy">© 2026 Workshop Claude Code · Jakarta, Indonesia</p>
+    </div>
+  </footer>
+
+  <!-- ⑨ MODAL – muncul setelah form berhasil disubmit -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal">
+      <button class="modal-x" id="modalX" aria-label="Tutup">✕</button>
+      <!-- Stripe warna di atas modal -->
+      <div class="modal-stripe"></div>
+      <div class="modal-body">
+        <div class="modal-emoji">🎉</div>
+        <h3>Pendaftaran Berhasil!</h3>
+        <p id="modalMsg"></p>
+        <div class="modal-detail" id="modalDetail"></div>
+        <button class="btn-primary btn-modal-ok" id="modalOk">Oke, Sampai Jumpa!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Kunci rahasia — JANGAN pernah di-commit
+.env
+
+# Data pendaftaran (berisi data pribadi peserta)
+data/pendaftaran.json
+
+# Dependensi Node.js
+node_modules/
+
+# Data session Claude Code (tidak relevan untuk repo)
+.claude/

@@ -1,0 +1,13 @@
+{
+  "name": "workshop-claude-code",
+  "version": "1.0.0",
+  "description": "Halaman pendaftaran Workshop Claude Code 2026",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "license": "MIT"
+}

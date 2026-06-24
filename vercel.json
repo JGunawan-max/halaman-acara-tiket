@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "functions": {
+    "api/daftar.js": {
+      "includeFiles": "email.js"
+    }
+  },
+  "routes": [
+    { "src": "/api/daftar", "dest": "/api/daftar.js" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
