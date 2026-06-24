@@ -202,13 +202,13 @@ module.exports = async function handler(req, res) {
   });
   const urlEtiket = getBaseUrl(req) + '/etiket.html?' + params;
 
-  kirimEmail({ to: entri.email, nama: entri.nama, kodeTiket, jumlahTiket: qty, totalHarga, urlEtiket })
-    .then(h => {
-      if (h.dilewati)   console.log('[EMAIL] Dilewati —', h.alasan);
-      else if (h.sukses) console.log('[EMAIL] Terkirim ke', entri.email, '| id:', h.id);
-      else               console.log('[EMAIL] Gagal —', JSON.stringify(h.detail));
-    })
-    .catch(err => console.error('[EMAIL] Error:', err));
+  // await — Vercel mematikan function setelah response, jadi email HARUS selesai dulu
+  const hasilEmail = await kirimEmail({ to: entri.email, nama: entri.nama, kodeTiket, jumlahTiket: qty, totalHarga, urlEtiket })
+    .catch(err => { console.error('[EMAIL] Error:', err); return { sukses: false }; });
+
+  if (hasilEmail.dilewati)    console.log('[EMAIL] Dilewati —', hasilEmail.alasan);
+  else if (hasilEmail.sukses) console.log('[EMAIL] Terkirim ke', entri.email, '| id:', hasilEmail.id);
+  else                        console.log('[EMAIL] Gagal —', JSON.stringify(hasilEmail.detail));
 
   jsonRes(res, 200, {
     sukses:       true,
