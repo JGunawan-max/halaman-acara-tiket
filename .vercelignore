@@ -1,0 +1,12 @@
+# File ini memberitahu Vercel file mana yang TIDAK perlu di-deploy
+# (mirip .gitignore tapi khusus untuk Vercel)
+
+# Server lokal — hanya untuk development di komputer sendiri,
+# bukan untuk Vercel (Vercel pakai api/daftar.js, bukan server ini)
+server.js
+
+# Test — tidak perlu di production
+tests/
+
+# Data lokal
+data/
